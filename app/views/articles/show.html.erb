@@ -1,11 +1,21 @@
-<h1>
-  Showing selected Article
+
+
+<h1 align="center">
+  <%= @article.title %>
 </h1>
+<div class="well col-xs-8 col-xs-offset-2">
 
-<p>
-  Title: <%= @article.title %>
-</p>
+  <h4>
+    <%= simple_format(@article.description) %>
+  </h4>
+  <hr>
+  <div class="article-actions" align="center">
+    <%= link_to 'Edit', edit_article_path(@article) ,class: "btn btn-primary" %> 
+    <%= link_to 'View All Articles', articles_path(@article) ,class: "btn btn-success" %> 
+    <%= link_to 'Delete', article_path(@article),class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
 
-<p>
-  Description: <%= @article.description %>
-</p>
+      
+  
+</div>
+  
